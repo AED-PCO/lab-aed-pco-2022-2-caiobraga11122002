@@ -55,25 +55,21 @@ namespace MyApp
 
         static void NumeroPerfeito()
         {
-            int Soma = 0;
+            int Ac = 0, A, i = 1000, Aux;
 
-            for (int i = 1; i <= 1000; i++)
+            for (A = 1; A < i; A++)
             {
-                for (int N = 1; N <= i; N++)
-
-                    if (N % i == 0)
-                    {
-                        Soma = Soma + i;
-
-                        if (N == Soma)
-                        {
-                            Console.Write($"{N} ");
-                            Soma = 0;
-
-                        }
-                    }
+                for (Aux = 1; Aux < A; Aux++)
+                {
+                    if (A % Aux == 0)
+                        Ac = Ac + Aux;
+                }
+                if (Ac == A)
+                {
+                    Console.Write($"{A}, ");
+                }
+                Ac = 0;
             }
-
         }
 
         static void Main(string[] args)
