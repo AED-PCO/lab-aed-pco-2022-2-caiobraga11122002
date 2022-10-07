@@ -16,7 +16,7 @@ Um Número é dito Primo se possui como divisores o número 1 e ele mesmo. Em ou
 
 Resolução: FOram feitas duas funçoes ValidaPrimo com um for e uma condição passando para ele o N informado pelo usuário e NumeroPerfeito contando todos os N perfeitos de 0 a 1000 com um for percorrendo até 1000 e um for percorrendo o N e vendo todos os numeros que ele se dividem para saber se é perfeito.
 
-Imagem da Resolução: Exercicio_Lista1_Exe2_AnaClaraBertoldo
+![image](https://user-images.githubusercontent.com/111787841/194451788-25b3366a-23b7-4223-b3e5-4c3cdb55c885.png)
 
 Gráfico: Gráficos - Laboratorio 4 - Lab1_Exercicio2
 
