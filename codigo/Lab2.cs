@@ -66,7 +66,7 @@ class Program
         Console.Write("Qual o valor de N: ");
         N = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("X");
+        Console.WriteLine("");
 
         Console.Write("Qual o valor de N2: ");
         N2 = int.Parse(Console.ReadLine());
