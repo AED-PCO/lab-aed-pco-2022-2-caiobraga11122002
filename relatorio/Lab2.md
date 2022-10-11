@@ -45,9 +45,9 @@ Exercício 5 -
 
 Escreva um método recursivo que calcule a soma dos elementos de valor par de um vetor de números inteiros positivos.
 
-Resolução: 
-
-Imagem:
+Resolução: Foi criado um vetor V de tamanho 5 Random, e outro vetor v criado com o tamanho também 5 e passado para ele somente os valores pares do vetor o qual fiz uma função recursiva para somar todo o vetor e o imprimi na tela.
+  
+![image](https://user-images.githubusercontent.com/111787841/194984595-53521ff6-356c-4934-a1a1-338a065629ac.png)
 
 Tabela:
 
