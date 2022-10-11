@@ -118,6 +118,10 @@ Atividade 5 - (Falhas)
 soma dos elementos de valor par de um 
 vetor de numeros inteiros positivos.*/
 
+/* Escreva um método recursivo que calcule a 
+soma dos elementos de valor par de um 
+vetor de numeros inteiros positivos.*/
+
 using System;
 
 namespace MyApp // Note: actual namespace depends on the project name.
@@ -135,11 +139,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static int SomaPares(int[] V, int i)
         {
-            int Soma=0;
+            int Soma = 0;
 
-            if (V[i] % 2 == 0)
-            {
-                return Soma + SomaPares(V );
+            if(i ==0)
+          {
+                return 0;
             }
             else
                 return V[i - 1] + SomaPares(V, i - 1);
@@ -149,16 +153,25 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             int[] V = new int[5];
 
+            int[] v = new int[5];
+
             Random x = new Random();
 
             for (int i = 0; i < 5; i++)
             {
                 V[i] = x.Next(1, 100);
+
+                if (V[i] % 2 == 0)
+                {
+                    v[i] = V[i];
+                }
             }
 
             MostraVetor(V);
 
-            Console.WriteLine($"{SomaPares(V, 5)} ");
+            Console.WriteLine("");
+
+            Console.WriteLine($"{SomaPares(v, 5)} ");
 
             Console.ReadKey();
         }
