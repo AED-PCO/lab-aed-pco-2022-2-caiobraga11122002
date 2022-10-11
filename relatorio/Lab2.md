@@ -2,9 +2,9 @@ Exercício 1 -
 
 Escreva um método recursivo que retorne o fatorial de um número.
 
-Resolução: 
+Resolução: O usuário entra com o valor N e foi criada uma função FatrialRecursivo que faz o fatorial de N o decrementando até que N seja diferente de 0
 
-Imagem:
+![image](https://user-images.githubusercontent.com/111787841/194984798-0b09848b-60d0-4278-9cfe-14e56d3f31de.png)
 
 Tabela:
 
