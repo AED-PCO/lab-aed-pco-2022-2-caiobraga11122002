@@ -6,7 +6,7 @@ Resolução: Foram feitas duas contas Resultado1 e Resultado2 E o valor de N, De
 
 ![image](https://user-images.githubusercontent.com/111787841/194431014-1e227a31-d63b-490c-8580-ba6d04355f7f.png)
 
-Gráfico: Gráficos - Laboratorio 4 - Lab1_Exercicio1
+![image](https://user-images.githubusercontent.com/111787841/195213851-d17a5bed-bd00-40e7-bdee-764875215963.png)
 
 
 
@@ -18,7 +18,7 @@ Resolução: FOram feitas duas funçoes ValidaPrimo com um for e uma condição 
 
 ![image](https://user-images.githubusercontent.com/111787841/194451788-25b3366a-23b7-4223-b3e5-4c3cdb55c885.png)
 
-Gráfico: Gráficos - Laboratorio 4 - Lab1_Exercicio2
+![image](https://user-images.githubusercontent.com/111787841/195216043-aae33218-0c7a-4c39-b4c2-b5cf6c31b752.png)
 
 
 -Exercicio 3-
@@ -29,17 +29,17 @@ Resolução: FOram criados dois vetores A e B e uma função MostraVetor Para mo
 
 ![image](https://user-images.githubusercontent.com/111787841/194431408-0d564887-1f6c-48ad-a96a-f2d6e1b2dab1.png)
 
-Gráficos: Gráficos - Laboratorio 4 - Lab1_Exercicio3
+![image](https://user-images.githubusercontent.com/111787841/195215394-6e09a945-1cd7-4322-ba04-e7d1b09a2144.png)
 
 -Exercicio 4-
 
 Faça um programa que receba os elementos de uma matriz de 5 linhas por 3 colunas. Mostre a soma dos elementos de cada uma das linhas e das colunas da matriz.
 
-Resolução:
+Resolução: Foi criado uma Matriz M depois duas funções SomaMatriz e SomaColunas que fazem a soma das linhas e colunas e uma função MostraMatriz que a imprime na tela.
 
 ![image](https://user-images.githubusercontent.com/111787841/194431997-9ee7d1b9-8570-47e9-ba7b-9dca18d4bd69.png)
 
-Gráfico: Gráficos - Laboratorio 4 - Lab1_Exercicio3
+![image](https://user-images.githubusercontent.com/111787841/195215013-048b86b8-2984-498d-b451-dd428aa2ad5a.png)
 
 -Exercicio 5-
 
@@ -49,7 +49,7 @@ Resolução: Foi criado uma função Fat passando o N, e um For indo de  N a 1 M
 
 ![image](https://user-images.githubusercontent.com/111787841/194432139-d8a84d12-9127-45b1-ac1f-317ae88b973a.png)
 
-Gráfico: Gráficos - Laboratorio 4 - Lab1_Exercicio5
+![image](https://user-images.githubusercontent.com/111787841/195215587-edd8019c-8b4d-4dba-85b3-6be0bb3227c6.png)
 
 
 -Exercicio 6-
@@ -60,4 +60,4 @@ Resolução: Foi criado passando uma Função Eleveado Passnado X e Y Fazendo X 
 
 ![image](https://user-images.githubusercontent.com/111787841/194432239-92307910-b4d8-412f-bdf2-3afa8964c9be.png)
 
-Gráfico: Gráficos - Laboratorio 4 - Lab1_Exercicio6
+![Uploading image.png…]()
