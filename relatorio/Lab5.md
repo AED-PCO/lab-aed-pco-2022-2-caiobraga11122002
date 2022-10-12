@@ -1,1 +1,1 @@
-Planílha de complexidade de todos os Labs: 
+tabela de complexidade: 
