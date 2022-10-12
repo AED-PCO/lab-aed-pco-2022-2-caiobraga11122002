@@ -8,7 +8,7 @@ O(n)
 
 3
 ![3](https://user-images.githubusercontent.com/111787841/195230803-2377b8ba-44c8-47f4-919a-844a980bc7d3.png)
-
+O(n^2)
 
 4
 ![4](https://user-images.githubusercontent.com/111787841/195230818-ebd089e7-d84a-442d-b6af-0d026b8035f0.png)
