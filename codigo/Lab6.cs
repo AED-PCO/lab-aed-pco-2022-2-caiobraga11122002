@@ -1,3 +1,5 @@
+//Codigos cópiados/modificados da internet
+
 BoubleSort-
 
 using System;
