@@ -34,11 +34,11 @@ Exercício 4 -
 
 Escreva um método recursivo que receba uma frase e uma letra como parâmetros. Este método deve retornar a quantidade de ocorrências desta letra nesta frase.
 
-Resolução: 
+Resolução: Foi passado uma Frase e o usuário digita a letra e foi passado FraseRecursiva que conta quantas letras são iguais e acumula na variável letra e retorna na tela.
 
-Imagem:
+![image](https://user-images.githubusercontent.com/111787841/195224047-98eafee6-f75f-48a4-9681-a12b28ea0def.png)
 
-Tabela:
+![image](https://user-images.githubusercontent.com/111787841/195224683-0c6ed8f8-f47d-4e9c-ac11-f25ada839d71.png)
 
 
 Exercício 5 -
