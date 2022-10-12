@@ -1,5 +1,6 @@
 1
 ![1](https://user-images.githubusercontent.com/111787841/195230787-d914c70d-cc0a-4325-984f-ffb2c9b9709b.png)
+O(n)
 
 2
 ![2](https://user-images.githubusercontent.com/111787841/195230800-d4035219-931b-44b1-9420-bf4fba8da69e.png)
