@@ -112,6 +112,43 @@ Atividade 3 -
     }
 }
 
+Atividade 4-
+    
+    namespace lab2_fra
+{
+    internal class Program
+    {
+        static int Frase(string frase, char letra)
+        {
+            if (frase == "")
+            {
+                return (0);
+            }
+            else if (frase[0] == letra)
+            {
+                return Frase(frase.Substring(1), letra) + 1;
+            }
+            else
+                return Frase(frase.Substring(1), letra);
+        }
+        static void Main(string[] args)
+        {
+
+
+            string Frase1 = ("a ana e linda");
+            char letra;
+
+            Console.WriteLine("Letra:");
+            letra = char.Parse(Console.ReadLine());
+
+            int n = Frase(Frase1, letra);
+
+            Console.WriteLine($"Frase {Frase1} possui {n} quantidades de letras {letra}");
+        }
+    }
+}
+
+
 Atividade 5 - (Falhas)
     
     /* Escreva um método recursivo que calcule a 
@@ -177,3 +214,5 @@ namespace MyApp // Note: actual namespace depends on the project name.
         }
     }
 }
+
+Atividade 6 (A FAZER)
