@@ -58,3 +58,63 @@ namespace lab8_fila
         }
     }
 }
+
+Pilha
+
+namespace Laboratorio8_Pilha
+{
+    internal class Program
+    {
+        static int[] InsereFila(int[] V, int Aux, int Valor)
+        {
+            V[Aux] = Valor;
+            return V;
+        }
+        static int TirarPilha(int aux, int[] V)
+        {
+            aux -= 1;
+            Console.WriteLine("Removido: " + V[aux]);
+            return aux;
+        }
+
+        static void Main(string[] args)
+        {
+            int Pos = 0, Valor = 0, TamanhoVetor = 10;
+            int[] Vetor = new int[TamanhoVetor];
+
+            for (int i = 0; i < TamanhoVetor; i++)
+            {
+                Console.Write("Icluir no vetor: ");
+                Valor = int.Parse(Console.ReadLine());
+
+                if (Pos < 0)
+                {
+
+                    InsereFila(Vetor, Pos, Valor);
+                    Pos += 1;
+                }
+                else
+                {
+                    Console.WriteLine("Cheio");
+                }
+            }
+
+                TirarPilha(Pos, Vetor);
+                Pos -= 1;
+
+                if (Pos > 0)
+                {
+                    int AuxRetira = Pos;
+                    for (int k = 0; k < AuxRetira; k++)
+                    {
+                        TirarPilha(Pos, Vetor);
+                        Pos -= 1;
+                    }
+                }
+            }
+        }
+    }
+
+Lista-
+    
+    
