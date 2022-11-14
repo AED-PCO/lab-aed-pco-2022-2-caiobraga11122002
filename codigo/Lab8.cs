@@ -117,4 +117,80 @@ namespace Laboratorio8_Pilha
 
 Lista-
     
-    
+    namespace Laboratorio8_Lista
+
+{
+    internal class Program
+    {
+        static int[] RemoverLista(int[] V, int i)
+        {
+
+            V[i] = 0;
+            return V;
+        }
+        static int[] InserirLista(int Fim, int[] V, int Pos, int Valor)
+        {
+            if (Fim < 0)
+            {
+                V[Pos] = Valor;
+                return V;
+            }
+            if (Fim > Pos)
+                Fim = Pos;
+            for (int i = Pos; i > Fim; i--)
+
+            {
+                V[i] = V[i - 1];
+            }
+            V[Fim] = Valor;
+            return V;
+        }
+
+        static void mostraVetor(int[] V)
+        {
+            for(int i = 0; i < V.Length; i++)
+            {
+                Console.Write($"{V[i]}, ");
+            }
+            Console.WriteLine("");
+        }
+
+
+        static void Main(string[] args)
+        {
+            int Pos = 0, Valor = 0, TamanhoVetor = 10, Op;
+            int[] Vetor = new int[TamanhoVetor];
+
+            for (int B = 0; B < 10; B++)
+            {
+                Console.WriteLine("Inserir: ");
+                Valor = int.Parse(Console.ReadLine());
+                Console.WriteLine("Posição: ");
+                Pos = int.Parse(Console.ReadLine());
+
+                if (Pos < TamanhoVetor)
+                {
+                    InserirLista(TamanhoVetor, Vetor, Pos, Valor);
+                    Pos += 1;
+                    mostraVetor(Vetor);
+                }
+            }
+
+                Console.WriteLine("Deseja remover: 1 - SIM 2 - NÃO");
+                Op = int.Parse(Console.ReadLine());
+
+                if (Op == 1)
+                {
+
+                    Console.WriteLine("Qual posição deseja remover?");
+                    Pos = int.Parse(Console.ReadLine());
+                    RemoverLista(Vetor, Pos);
+                }
+                else
+                {
+                    mostraVetor(Vetor);
+                }
+                }
+            }
+
+        }
