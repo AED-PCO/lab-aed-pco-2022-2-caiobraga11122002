@@ -1,5 +1,3 @@
-//Erro na hora da troca.
-
 namespace lab8_fila
 {
     internal class Program
@@ -21,37 +19,30 @@ namespace lab8_fila
             return Vetor;
         }
 
-        static int[] InserirPilha(int[] Vetor)
+        static int[] InserirPilha(int[] Vetor, int tam)
         {
-            int[] pilha = new int[Vetor.Length];
+            int[] pilha = new int[tam];
 
-            int pos = Vetor[0];
-            int aux = 0;
-            int posPilha = pilha.Length;
-
-
-            for (int j =0; j > Vetor.Length; j++)
+            for (int j = 0; j < tam; j++)
             {
-                aux = pos;
-                pos++;
-
-                posPilha = aux;
-                posPilha--;
-
-                pilha[posPilha] = aux;
+                for(int i = tam-1; i >= 0; i--)
+                {
+                    pilha[i] = Vetor[j];
+                    j++;
+                }
             }
             return pilha;
         }
-
         static void Main(string[] args)
         {
             int Pos = 0;
-            int[] V = new int[2];
+            int tam = 5;
+            int[] V = new int[tam];
             int[] VTrocado = new int[V.Length];
 
-            for (int j = 0; j < V.Length; j++)
+            for (int j = 0; j < tam; j++)
             {
-                if (Pos < V.Length)
+                if (Pos < tam)
                 {
                     InserirFila(V, Pos);
                     Pos += 1;
@@ -61,7 +52,7 @@ namespace lab8_fila
             Console.Write("Fila: ");
             MostraVetor(V);
 
-            VTrocado = InserirPilha(V);
+            VTrocado = InserirPilha(V, tam);
 
             MostraVetor(VTrocado);
 
