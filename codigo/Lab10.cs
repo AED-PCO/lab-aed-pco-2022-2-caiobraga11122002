@@ -1,329 +1,139 @@
 //.....................................................................................................................FILA
-using System;//CLASSE FILA
+using PosicaoFila;//MAIN
+using FilaClasse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoClasse
-{
-    internal class Fila
-    {
-        const int Capacidade = 5;
-        private int quantidade = 0;
-        private int inicio = 0;
-        private int fim = 0;
-        private string[] dados = new string[Capacidade];
-
-        public int tamanho()
-        {
-            Console.WriteLine(quantidade);
-            return quantidade;
-        }
-
-        public void inserirElemento(string valor_i)
-        {
-            if(tamanho () == Capacidade)
-            {
-                throw new Exception("Fila cheia");
-            }
-            else
-            {
-                dados[fim] = valor_i;  
-                fim = (fim+1) % Capacidade;
-                quantidade++;
-            }
-        }
-        public string RemoveElemento()
-        {
-            if (tamanho() == 0)
-            {
-                throw new Exception("Fila Vazia");
-            }
-            else
-            {
-                String valor = dados[inicio];
-                inicio = (inicio +1) % Capacidade;
-                quantidade--;
-                return valor;
-            }
-        }
-    }
-}
-
-using System;//MAIN FILA
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjetoClasse
+namespace ClasseFila
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string op = "", valor;
+            string Op;
+            int Val;
 
-            Fila  minhafila = new Fila();
-            Console.WriteLine("Sistemas de Fila");
+            Posicao Pos = new Posicao();
 
             do
             {
-                try
+                Console.Write("Programa de Fila:\n 1 -> Inserir\n 2 -> Remover\n 3 -> Mostrar\n");
+
+
+                Op = Console.ReadLine();
+
+                switch (Op)
                 {
-                    Console.WriteLine("\n1 -> inserir \n2 -> remover \n3 -> mostrar");
-                    op = Console.ReadLine();
-
-                    switch (op)
-                    {
-                        case "1":
-                            Console.Write("Qual o elemento para inserir na fila: ");
-                            valor = Console.ReadLine();
-                            minhafila.inserirElemento(valor);
-                            break;
-
-                        case "2":
-                            minhafila.RemoveElemento();
-                            break;
-
-                        case "3":
-                            Console.Write("Tamanho da fila: ");
-                            minhafila.tamanho();
-                            break;
-
-                        default:
-                            Console.WriteLine("Opção inválida!!");
-                            break;
-                    }
+                    case "1":
+                        Console.Write("Qual será inserido: ");
+                        Val = int.Parse(Console.ReadLine());
+                        Fila.Inserir(Val);
+                        break;
+                    case "2":
+                        Console.WriteLine("Elemento removido:" + Fila.Remover());
+                        Console.ReadKey();
+                        break;
+                    case "3":
+                        Fila.mostrar();
+                        Console.ReadKey();
+                        break;
                 }
-                catch (Exception erro)
-                {
-                    Console.WriteLine(erro.Message);
-                }
-            } while (op != "9");
+                Console.Clear();
+            } while (Op != "9");
         }
     }
 }
 
 //.....................................................................................................................PILHA
 
-using System;//CLASSE PILHA
+using PosicaoFila;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoClasse
+namespace FilaClasse
 {
-    internal class Pilha
+    internal class Fila
     {
-        const int Capacidade = 5;
-        private int quantidade = 0;
-        private int inicio = 0;
-        private int fim = 0;
-        private string[] dados = new string[Capacidade];
+        public static Posicao Inicio = new Posicao();
+        public static Posicao Fim = Inicio;
 
-        public int tamanho()
+        Posicao PosicaoFila = new Posicao();
+
+        public Fila()
         {
-            Console.WriteLine(quantidade);
-            return quantidade;
+            Inicio = new Posicao();
+            Fim = Inicio;
         }
 
-        public void inserirElemento(string valor_i)
+        public static void Inserir(int Numero)
         {
-            if (tamanho() == Capacidade)
-            {
-                throw new Exception("Pilha cheia");
-            }
-            else
-            {
-                dados[inicio] = valor_i;
-                inicio = (inicio + 1) % Capacidade;
-                quantidade++;
-            }
+            Posicao NovaPosicao = new Posicao();
+            NovaPosicao.Elemento = Numero;
+
+            Fim.Ponteiro = NovaPosicao;
+            Fim = NovaPosicao;
         }
-        public string RemoveElemento()
+
+        public static void mostrar()
         {
-            if (tamanho() == 0)
-            {
-                throw new Exception("Pilha Vazia");
-            }
-            else
-            {
-                String valor = dados[fim];
-                fim = (fim + 1) % Capacidade;
-                quantidade--;
-                return valor;
-            }
-        }
-    }
-}
+            Posicao x = Inicio.Ponteiro;
 
-
-using System;//MAIN PILHA
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjetoClasse
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            string op = "", valor;
-
-            Pilha minhaPilha = new Pilha();
-            Console.WriteLine("Sistemas de Fila");
-
+            Console.Write("Sua fila:");
             do
             {
-                try
-                {
-                    Console.WriteLine("\n1 -> inserir \n2 -> remover \n3 -> mostrar");
-                    op = Console.ReadLine();
+                Console.Write(x.Elemento + " ");
+                x = x.Ponteiro;
 
-                    switch (op)
-                    {
-                        case "1":
-                            Console.Write("Qual o elemento para inserir na fila: ");
-                            valor = Console.ReadLine();
-                            minhaPilha.inserirElemento(valor);
-                            break;
+            } while (x != null);
+          }
 
-                        case "2":
-                            minhaPilha.RemoveElemento();
-                            break;
-
-                        case "3":
-                            Console.Write("Quantidade total de elementos: ");
-                            minhaPilha.tamanho();
-                            break;
-
-                        default:
-                            Console.WriteLine("Opção inválida!!");
-                            break;
-                    }
-                }
-                catch (Exception erro)
-                {
-                    Console.WriteLine(erro.Message);
-                }
-            } while (op != "9");
+        public static int Remover()
+        {
+            if (Inicio == Fim)
+            {
+                return 0;
+            }
+            else
+            {
+                Inicio = Inicio.Ponteiro;
+                int Remover = Inicio.Elemento;
+                return Remover;
+            }
         }
     }
 }
 
-//.....................................................................................................................LISTA
+//CLASSE POSIçÂO
 
-using System;//CLASS LISTA
+using System;
+using FilaClasse;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoClasse
+namespace PosicaoFila
 {
-    internal class Lista
+    internal class Posicao
     {
-        const int Capacidade = 5;
-        private int quantidade = 0;
-        private int inicio = 0;
-        private int fim = 0;
-        private string[] dados = new string[Capacidade];
+        public int Elemento;
+        public Posicao Ponteiro;
 
-        public int tamanho()
+        public Posicao()
         {
-            Console.WriteLine(quantidade);
-            return quantidade;
+            this.Elemento = 0;
         }
 
-        public void inserirElemento(string valor_i, int pos)
+        public Posicao(int elemento)
         {
-            if (tamanho() == Capacidade)
-            {
-                throw new Exception("Pilha cheia");
-            }
-            else
-            {
-                dados[inicio] = valor_i;
-                inicio = (inicio + 1) % Capacidade;
-                quantidade++;
-                pos++;
-            }
-        }
-        public string RemoveElemento(int pos)
-        {
-            if (tamanho() == 0)
-            {
-                throw new Exception("Pilha Vazia");
-            }
-            else if (pos == quantidade);
-            {
-                String valor = dados[fim];
-                fim = (fim + 1) % Capacidade;
-                quantidade--;
-                return valor;
-            }
+            this.Elemento = elemento;
         }
     }
 }
-
-
-namespace ProjetoClasse//MAIN LISTA
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            string Opcao, Valor; 
-                int pos;
-
-            Lista Lista_Aed = new Lista();
-            do
-            {
-                Console.WriteLine("\n1 - Inserir \n2 - Remover \n3 - Qantidade");
-                Console.WriteLine("");
-
-                Opcao = Console.ReadLine();
-
-                switch (Opcao)
-                {
-                    case "1":
-                        Console.Write("Qual o elemento para inserir na fila: ");
-                        Valor = Console.ReadLine();
-                        Console.Write("Qual a posição: ");
-                        pos = int.Parse(Console.ReadLine());
-                        Lista_Aed.inserirElemento(Valor, pos);
-                        break;
-
-                    case "2":
-                        Console.Write("Qual o elemento para Remover na fila: ");
-                        Valor = Console.ReadLine();
-                        Console.Write("Qual a posição: ");
-                        pos = int.Parse(Console.ReadLine());
-                        Lista_Aed.RemoveElemento(pos);
-                        break;
-
-                    case "3":
-                        Console.Write("Quantidade total de elementos: ");
-                        Lista_Aed.tamanho();
-                        break;
-
-                    default:
-                        Console.WriteLine("Opção inválida!");
-                        break;
-                }
-
-                {
-                }
-            } while (Opcao != "9");
-        }
-    }
-}
-
-//..................................................................CALCULADORA..................................................................
-
-
