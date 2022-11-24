@@ -137,3 +137,149 @@ namespace PosicaoFila
         }
     }
 }
+
+//.......................................................................................................................MAIN PILHA
+using PosicaoPilha;//MAIN
+using PilhaClasse;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ClassePilha
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string Op;
+            int Val;
+            Posicao Pos = new Posicao();
+
+            do
+            {
+                Console.Write("Programa de Pilha:\n 1 -> Inserir\n 2 -> Remover\n 3 -> Mostrar\n");
+
+
+                Op = Console.ReadLine();
+
+                switch (Op)
+                {
+                    case "1":
+                        Console.Write("Qual será inserido: ");
+                        Val = int.Parse(Console.ReadLine());
+                        Pilha.Inserir(Val);
+                        break;
+                    case "2":
+                        Console.WriteLine("Elemento removido:" + Pilha.Remover());
+                        Console.ReadKey();
+                        break;
+                    case "3":
+                        Pilha.mostrar();
+                        Console.ReadKey();
+                        break;
+                }
+                Console.Clear();
+            } while (Op != "9");
+        }
+    }
+}
+
+
+//.......................................................................................................................CLASSE PILHA
+
+using PosicaoPilha;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PilhaClasse
+{
+    internal class Pilha
+    {
+        public static Posicao Inicio = new Posicao();
+        public static Posicao Fim = Inicio;
+        Posicao PosicaoPilha = new Posicao();
+
+        public Pilha()
+        {
+            Inicio = new Posicao();
+            Fim = Inicio;
+        }
+
+        public static void Inserir(int Numero)
+        {
+            Posicao NovaPosicao = new Posicao();
+            NovaPosicao.Elemento = Numero;
+
+            Fim.Ponteiro = NovaPosicao;
+            Fim = NovaPosicao;
+        }
+
+        public static void mostrar()
+        {
+            Posicao x = Inicio.Ponteiro;
+
+            Console.Write("Sua fila:");
+            do
+            {
+                Console.Write(x.Elemento + " ");
+                x = x.Ponteiro;
+
+            } while (x != null);
+        }
+
+        public static int Remover()
+        {
+            if (Inicio == Fim)
+                return 0;
+
+            int Remover = Fim.Elemento;
+            Posicao In = Inicio;
+
+
+            while (In.Ponteiro != Fim)
+            {
+                In = In.Ponteiro;
+            }
+
+            Fim = In;
+            Fim.Ponteiro = null;
+
+            return Remover;
+        }
+    }
+}
+
+//.......................................................................................................................CLASSE PONTEIRO
+
+
+using System;
+using PilhaClasse;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PosicaoPilha
+{
+    internal class Posicao
+    {
+        public int Elemento;
+        public Posicao Ponteiro;
+
+        public Posicao()
+        {
+            this.Elemento = 0;
+        }
+
+        public Posicao(int elemento)
+        {
+            this.Elemento = elemento;
+        }
+    }
+}
